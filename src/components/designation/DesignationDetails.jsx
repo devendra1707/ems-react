@@ -9,6 +9,7 @@ import {
   deleteDesignationById,
   fetchDesignationList,
 } from "../../services/DesignationService";
+import { formatDate } from "../../config/timestamp";
 
 const DesignationDetails = () => {
   const navigate = useNavigate();
@@ -86,10 +87,10 @@ const DesignationDetails = () => {
                           <td>{details.level}</td>
                           <td>{details.staffCategory.title || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate).toLocaleString()}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>

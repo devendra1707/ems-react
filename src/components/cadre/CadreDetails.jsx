@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import Base from "../navbar/Base";
 import { FiEdit } from "react-icons/fi";
 import { MdDeleteForever } from "react-icons/md";
-import { BiCartAdd } from "react-icons/bi";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { deleteCadreById, fetchCadreList } from "../../services/CadreService";
+import { formatDate } from "../../config/timestamp";
 
 const CadreDetails = () => {
   const navigate = useNavigate();
@@ -77,10 +77,10 @@ const CadreDetails = () => {
 
                           <td>{details.title || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate)}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate)}
                           </td>
 
                           <td>

@@ -6,6 +6,7 @@ import { BiCartAdd } from "react-icons/bi";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { deleteRegionById, fetchRegionList } from "../../services/RegionService";
+import { formatDate } from "../../config/timestamp";
 
 const RegionDetails = () => {
   const navigate = useNavigate();
@@ -76,10 +77,10 @@ const RegionDetails = () => {
 
                           <td>{details.name || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate).toLocaleString()}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>

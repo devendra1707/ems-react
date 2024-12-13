@@ -9,6 +9,7 @@ import {
   deleteDivisionById,
   fetchDivisionList,
 } from "../../services/DivisionService";
+import { formatDate } from "../../config/timestamp";
 
 const DivisionDetails = () => {
   const navigate = useNavigate();
@@ -82,10 +83,10 @@ const DivisionDetails = () => {
                           <td>{details.name || "N/A"}</td>
                           <td>{details.circle.name || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate).toLocaleString()}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>

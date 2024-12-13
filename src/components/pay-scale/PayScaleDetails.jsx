@@ -6,6 +6,7 @@ import { BiCartAdd } from "react-icons/bi";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { deletePayScaleById, fetchPayScaleList } from "../../services/PayScaleService";
+import { formatDate } from "../../config/timestamp";
 
 const PayScaleDetails = () => {
   const navigate = useNavigate();
@@ -80,10 +81,10 @@ const PayScaleDetails = () => {
                           <td>{details.level || "N/A"}</td>
                           <td>{details.gradePay || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate).toLocaleString()}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>

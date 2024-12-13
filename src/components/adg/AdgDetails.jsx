@@ -6,6 +6,7 @@ import { BiCartAdd } from "react-icons/bi";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { deleteAdgById, fetchAdgList } from "../../services/AdgService";
+import { formatDate } from "../../config/timestamp";
 
 const AdgDetails = () => {
   const navigate = useNavigate();
@@ -80,10 +81,10 @@ const AdgDetails = () => {
 
                           <td>{details.region.name || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate).toLocaleString()}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>

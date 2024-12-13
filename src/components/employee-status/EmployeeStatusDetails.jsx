@@ -6,6 +6,7 @@ import { BiCartAdd } from "react-icons/bi";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { deleteEmployeeStatusById, fetchEmployeeStatusList } from "../../services/EmployeeStatusService";
+import { formatDate } from "../../config/timestamp";
 
 const EmployeeStatusDetails = () => {
   const navigate = useNavigate();
@@ -77,10 +78,10 @@ const EmployeeStatusDetails = () => {
 
                           <td>{details.title || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate).toLocaleString()}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>

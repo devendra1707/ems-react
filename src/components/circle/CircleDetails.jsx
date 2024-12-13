@@ -8,6 +8,7 @@ import {
   deleteCircleById,
   fetchCircleList,
 } from "../../services/CircleService";
+import { formatDate } from "../../config/timestamp";
 
 const CircleDetails = () => {
   const navigate = useNavigate();
@@ -81,10 +82,10 @@ const CircleDetails = () => {
                           <td>{details.name || "N/A"}</td>
                           <td>{details.zone.name || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate).toLocaleString()}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>

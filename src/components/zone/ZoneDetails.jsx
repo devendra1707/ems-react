@@ -6,6 +6,7 @@ import { BiCartAdd } from "react-icons/bi";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { deleteZoneById, fetchZoneList } from "../../services/ZoneService";
+import { formatDate } from "../../config/timestamp";
 
 const ZoneDetails = () => {
   const navigate = useNavigate();
@@ -80,10 +81,10 @@ const ZoneDetails = () => {
                           <td>{details.name || "N/A"}</td>
                           <td>{details.adg.name || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate).toLocaleString()}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>

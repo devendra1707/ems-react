@@ -8,6 +8,7 @@ import {
 } from "../../services/EmployeeService";
 import { useNavigate } from "react-router-dom";
 import Base from "../navbar/Base";
+import { formatDate } from "../../config/timestamp";
 
 const EmployeeDetails = () => {
   const navigate = useNavigate();
@@ -139,10 +140,10 @@ const EmployeeDetails = () => {
                           <td>{details.additionalCharge}</td>
                           <td>{details.additionalDuty}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate).toLocaleString()}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>

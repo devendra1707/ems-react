@@ -8,6 +8,7 @@ import {
   deleteGenderById,
   fetchGenderList,
 } from "../../services/GenderService";
+import { formatDate } from "../../config/timestamp";
 
 const GenderDetails = () => {
   const navigate = useNavigate();
@@ -79,10 +80,10 @@ const GenderDetails = () => {
 
                           <td>{details.title || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate)}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>

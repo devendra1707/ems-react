@@ -6,6 +6,7 @@ import { BiCartAdd } from "react-icons/bi";
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { deleteDepartmentById, fetchDepartmentList } from "../../services/DepartmentService";
+import { formatDate } from "../../config/timestamp";
 
 const DepartmentDetails = () => {
   const navigate = useNavigate();
@@ -76,10 +77,10 @@ const DepartmentDetails = () => {
 
                           <td>{details.title || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate).toLocaleString()}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>

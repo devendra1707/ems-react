@@ -9,6 +9,7 @@ import {
   deleteReservationClasificationById,
   fetchReservationClasificationList,
 } from "../../services/ReservationClasificationService";
+import { formatDate } from "../../config/timestamp";
 
 const ReservationClassificationDetails = () => {
   const navigate = useNavigate();
@@ -96,10 +97,10 @@ const ReservationClassificationDetails = () => {
 
                           <td>{details.title || "N/A"}</td>
                           <td>
-                            {new Date(details.createdDate).toLocaleString()}
+                            {formatDate(details.createdDate).toLocaleString()}
                           </td>
                           <td>
-                            {new Date(details.modifiedDate).toLocaleString()}
+                            {formatDate(details.modifiedDate).toLocaleString()}
                           </td>
 
                           <td>
